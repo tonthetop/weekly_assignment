@@ -26,14 +26,6 @@ figcaption {
     box-sizing: border-box;
 }
 
-
-/* song-menu,
-.menu,
-.song-info-menu {
-    padding: 0;
-    margin: 0;
-} */
-
 .song-menu .menu {
     --primary-bg: #432275;
     background-color: var(--primary-bg);
