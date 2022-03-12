@@ -275,8 +275,8 @@ h3 {
 /* menu da cap */
 
 .menu {
-    --primary-bg: #432275;
-    background-color: var(--primary-bg);
+    /* --primary-bg: #432275; */
+    background-color: #432275;
     border-radius: 8px;
     position: absolute;
     width: 280px;
@@ -403,7 +403,7 @@ h3 {
 
 .menu-list--submenu>button>i:last-child {
     display: inline-block;
-    margin-left: auto;
+    am margin-left: auto;
 }
 
 
