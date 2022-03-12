@@ -280,7 +280,7 @@ h3 {
     border-radius: 8px;
     position: absolute;
     width: 280px;
-    height: 389px;
+    height: 383px;
     display: flex;
     flex-direction: column;
     font-family: Inter, sans-serif;
@@ -298,7 +298,6 @@ h3 {
     padding: 15px 15px 0px;
     height: 55px;
     display: flex;
-    font-family: inherit;
 }
 
 .menu-list:first-child>.div-thump {
@@ -377,7 +376,6 @@ h3 {
 .menu-list:last-child>li span {
     font-size: 14px;
     margin-left: 15px;
-    font-family: inherit;
 }
 
 .menu-list:last-child>li button {
@@ -386,6 +384,7 @@ h3 {
     font-size: 14px;
     width: 100%;
     display: flex;
+    font-family: inherit;
 }
 
 .menu-list:last-child>li button>i {
