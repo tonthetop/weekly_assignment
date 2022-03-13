@@ -4,7 +4,7 @@ const songCardRaw = `
 <ul class="menu-list">
     <div class="div-thump"><img src="img/main-thump.png" alt=""></div>
     <div class="div-title-wrap">
-        <p><span class="tille-name-sub">Chạy Về Khóc Với AnhA</span></p>
+        <p><span class="tille-name-sub">Chạy Về Khóc Với Anh</span></p>
         <div class="stats-song">
             <div class="stats-item singer-name">
                 <i class=" fa-solid fa-heart "></i> <span>1.1M</span>
@@ -119,9 +119,17 @@ divMenu.style.zIndex = 100;
 songCardList.forEach((songCard) => {
     songCard.addEventListener("contextmenu", (e) => handleSongCard(songCard, e))
 })
+document.addEventListener("click", (e) => {
+    const rectdDivMenu = divMenu.getBoundingClientRect();
+    if ((e.pageX < rectdDivMenu.left || e.pageX > rectdDivMenu.right) ||
+        (e.pageY < rectdDivMenu.top || e.pageY > rectdDivMenu.bottom)) {
+        divMenu.style.display = 'none'
+    }
+})
 
 function handleSongCard(songCard, e) {
     // add menu
+    divMenu.style.display = 'block'
     songCard.appendChild(divMenu);
     //
     var rectSongCard = songCard.getBoundingClientRect();
