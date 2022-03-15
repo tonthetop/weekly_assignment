@@ -38,6 +38,7 @@ const funct3 = async function() {
             resolve(fruitBasket[fruit])
         }, 1000)
     })
+
     for (var fruit in fruitBasket) {
         const get = await getNumFruit(fruit)
         console.log(get)
@@ -46,6 +47,6 @@ const funct3 = async function() {
     //foreach: not working with async function
     // Object.keys(fruitBasket).forEach(function(key) {
     //     await getNumFruit(fruitBasket[key]);
-
     // });
 }
+funct3()

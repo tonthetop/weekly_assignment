@@ -1,27 +1,19 @@
-function functA() {
-    var start = new Date().getTime();
-    for (i = 0; i < 5000000; ++i) {}
+function doA(miliSeconds) {
+    const startTime = new Date().getTime();
+    while (new Date().getTime() < startTime + miliSeconds) {}
+    console.log("Done: A");
 
-    var end = new Date().getTime();
-    var time = end - start;
-    console.log('Execution time: ' + time);
+};
+
+function doB(miliSeconds) {
+    return new Promise((resolve, reject) => {
+        setTimeout(function() {
+            resolve("Done: B");
+        })
+    }, miliSeconds)
 }
-const functB = new Promise((resolve, reject) => {
-    const condition = true;
-    if (condition) {
-        setTimeout(() => {
-            resolve("Success")
-        }, 1000)
-    } else reject("Failure")
-})
 const controller = async(req, res, next) => {
-    // setTimeout(() => {
-    //     console.log("A done")
-    // }, 10000)
-    await functB
-        .then(data => { console.log(data) })
-        .catch(err => { console.log(err) });
-
-
-}
+    doA(3000);
+    console.log(await doB(1000));
+};
 controller()
