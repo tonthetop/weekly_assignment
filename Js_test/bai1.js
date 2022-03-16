@@ -1,9 +1,20 @@
-function hello(people, callBack) {
-    console.log("hello ");
-    callBack(people)
-}
+ function sleep(miliSeconds) {
+     setTimeout(function() {
+         console.log('Hello world')
+     }, miliSeconds);
+ };
 
-function helloPeople(people) {
-    console.log("chào lần 2 : " + people);
-}
-setTimeout(hello, 5000, "Tuấn đẹp trai", helloPeople);;
+ // function sleep(miliSeconds) {
+ //     return new Promise(function(resolve, reject) {
+ //         setTimeout(function() {
+ //             resolve();
+ //             console.log("HelloWord");
+ //         }, miliSeconds);
+ //     })
+ // }
+
+ (async function() {
+     console.log("Print A")
+     sleep(5000);
+     console.log("Print B")
+ })()
