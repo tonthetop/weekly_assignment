@@ -3,10 +3,11 @@ const a = function() {
 }
 
 const b = function() {
-    console.log('imme')
+    console.log('Immediate')
 };
 setImmediate(b);
 setTimeout(() => console.log('timeout'))
 process.nextTick(a)
-console.log('c');
-//nexttick: -thuc thi ngay lan lap even loop tiep theo.. nghia la sau khi di vao call stacl
+console.log('intial');
+//nexttick: -thuc thi ngay lan lap even loop tiep theo.. nghia la sau khi call stack rong~ lan tiep theo
+//setImmediate: - thuc thi o cuoi callback LOOP, nghia la callback of setTimeout xog -->callback of setImmediate

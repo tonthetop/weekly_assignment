@@ -19,13 +19,13 @@ const controller = async() => {
     await doB(1000);
     console.log(new Date().getTime() - startTime)
 };
-controller()
-controller()
-controller()
-    // (async() => {
-    //     {
-    //         await controller();
-    //         await controller();
-    //         await controller();
-    //     }
-    // })()
+// controller()
+// controller()
+// controller()
+(async() => {
+    {
+        await controller();
+        await controller();
+        await controller();
+    }
+})()
