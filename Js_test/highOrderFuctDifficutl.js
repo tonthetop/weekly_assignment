@@ -1,18 +1,13 @@
-function repeat(n, action) {
-    for (var i = 0; i < n; i++) {
-        action(i)
-    }
-}
-repeat(3, dojob);
-
 function unless(test, then) {
-    if (!test) then();
+    if (!test) return then();
+    return "even"
 }
 
 function dojob(n) {
-    {
-        unless(n % 2 == 1, function() {
-            console.log(n, "is even");
-        });
-    }
+    console.log(n)
+    unless(n % 2 == 1, () => "odd");
 }
+
+
+const a = dojob(1010);
+console.log(a)

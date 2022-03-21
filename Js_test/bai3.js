@@ -15,17 +15,29 @@ function doB(miliSeconds) {
 
 const controller = async() => {
     const startTime = new Date().getTime();
-    doA(5000);
     await doB(1000);
+    doA(1000);
+    //await doB(1000);
+
     console.log(new Date().getTime() - startTime)
 };
-// controller()
-// controller()
-// controller()
-(async() => {
-    {
-        await controller();
-        await controller();
-        await controller();
-    }
+(async function() {
+    controller()
+    controller()
+    controller()
+    await doB(1000);
+
+    await doB(1000);
+
+    await doB(1000);
 })()
+
+
+
+
+// (async() => {
+//     await controller();
+//     await controller();
+//     await controller();
+
+// })()

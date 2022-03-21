@@ -22,11 +22,18 @@ const controller2 = function() {
 
 const controller = async function() {
     const startTime = new Date().getTime();
-    waitBlocking(1000)
-
-    await waitNonBlocking(1000)
+    //controller2(1000)
+    await controller1(1000)
+    controller2(1000)
     console.log(+(new Date().getTime() - startTime).toString());
-}
-controller()
-controller()
-controller()
+};
+
+// controller();
+// controller();
+// controller();
+(async() => {
+    await controller();
+    await controller();
+    await controller();
+
+})()
