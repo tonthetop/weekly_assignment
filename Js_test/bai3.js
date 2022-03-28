@@ -15,23 +15,17 @@ function doB(miliSeconds) {
 
 const controller = async() => {
     const startTime = new Date().getTime();
+    doA(10000);
     await doB(1000);
-    doA(1000);
     //await doB(1000);
-
     console.log(new Date().getTime() - startTime)
 };
-(async function() {
-    controller()
-    controller()
-    controller()
-    await doB(1000);
 
-    await doB(1000);
 
-    await doB(1000);
-})()
-
+const request = async(number) => {
+    console.log("request " + number)
+    await controller()
+}
 
 
 
