@@ -13,20 +13,13 @@ function doB(miliSeconds) {
     })
 }
 
-const controller = async() => {
-    const startTime = new Date().getTime();
+const controller = async(req, res, next) => {
     doA(10000);
     await doB(1000);
-    //await doB(1000);
-    console.log(new Date().getTime() - startTime)
+    res.sendStatus(200).end;
 };
 
-
-const request = async(number) => {
-    console.log("request " + number)
-    await controller()
-}
-
+module.exports = controller;
 
 
 // (async() => {
