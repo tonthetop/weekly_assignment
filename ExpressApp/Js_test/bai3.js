@@ -20,11 +20,3 @@ const controller = async(req, res, next) => {
 };
 
 module.exports = controller;
-
-
-// (async() => {
-//     await controller();
-//     await controller();
-//     await controller();
-
-// })()
